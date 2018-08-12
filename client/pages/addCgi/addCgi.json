@@ -1,6 +1,6 @@
 {
     "navigationBarTitleText": "快速添加 CGI",
     "usingComponents": {
-        "calendar": "plugin://cal/calendar"
+        "calendar": "plugin://calendar/calendar"
     }
 }
