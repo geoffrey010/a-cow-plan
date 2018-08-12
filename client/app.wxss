@@ -1,0 +1,11 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+} 
+
+page {
+  display: block;
+  height: 1110rpx;
+  width: 750rpx;
+  box-sizing: border-box;
+}

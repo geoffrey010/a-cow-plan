@@ -1,0 +1,47 @@
+:host {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.my-modal{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.radio{
+    height: 100%;
+    flex: 1 1 auto;
+}
+
+.radio-item{
+    height: 0;
+    width: 0;
+    opacity: 0;
+}
+.radio-style{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background-color: blanchedalmond
+
+}
+.radio-item:checked + .radio-style{
+    background-color: rgb(131, 131, 131);
+    color: beige
+}
+
+.radio + .radio {
+    margin-left: 1%;
+}
+.showIt {
+    display: flex
+}
+
+.hidden {
+    display: none
+}

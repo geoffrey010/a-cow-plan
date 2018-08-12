@@ -1,0 +1,9 @@
+<!-- components/modal/modal.wxml -->
+<view class="my-component {{isShow ? 'shown' : 'hidden'}}">
+    <radio-group bind:change="showRes" class="my-modal">
+        <label for="radio-{{index}}" wx:for="{{enabledSchedules}}" catch:tap="shutDownModal" wx:key="{{index}}" class="radio">
+            <radio class="radio-item" id="radio-{{index}}" value="{{item.id}}"></radio>
+            <text class="radio-style {{item.checked ? 'is-checked' : ''}}">{{item.text}}</text>
+        </label>
+    </radio-group>
+</view>

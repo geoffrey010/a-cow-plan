@@ -1,0 +1,35 @@
+/* pages/index/index.wxss */
+.container{
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+}
+.userInfo-row{
+    background-color: #9c9c9b!important;
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100%;
+    font-size:13px;
+    width: 100%;
+    align-items: center;
+    padding-left: 3%;
+}
+.datepicker.component{
+    height: 60%;
+}
+.userInfo-img{
+    // width: 100rpx;
+    height: 100%;
+}
+.userInfo-nickName{
+    font-size: 20rpx;
+}
+.component.modal{
+    height: 30%;
+}
+.btn{
+    font-size: 13px;
+    height: 2.3;    
+    flex-flow: column nowrap;
+    width: 100%;
+}

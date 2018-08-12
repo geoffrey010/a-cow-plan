@@ -1,0 +1,16 @@
+<view class="container">
+    <view class="component datepicker">
+        <date-picker id="date-picker" date="{{year}}{{month}}01" bind:selectedreset="emptySelected" bind:onselectdate="handleSelecteDate" bind:handleinit="bindChange"></date-picker>
+    </view>
+    <my-modal class="modal component" date="{{selectedDay}}" is-show="{{selected}}"></my-modal>
+    <view class="btn">
+        <button bind:tap="getScheduleMonthly">测试</button>
+        <button open-type="getUserInfo" wx:if="{{!logged}}" bind:tap="login">授权登陆</button>
+        <view class="userInfo-row" wx:else>
+            <open-data type="userAvatarUrl" lang="zh_CN" class="userInfo-img" src="{{userInfo.avatarUrl}}" alt="{{userInfo.nickName}}" />
+            <open-data type="userNickName" class="userInfo-nickname">
+                {{userInfo.nickName}}
+            </open-data>
+        </view>
+    </view>
+</view>
