@@ -3,7 +3,7 @@ const app = new Koa()
 const debug = require('debug')('koa-weapp-demo')
 const response = require('./middlewares/response')
 const bodyParser = require('koa-bodyparser')
-const config = require('./config')
+const config = require('./config').default
 
 // 使用响应处理中间件
 app.use(response)

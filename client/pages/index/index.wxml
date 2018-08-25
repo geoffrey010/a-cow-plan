@@ -7,7 +7,7 @@
         <button bind:tap="getScheduleMonthly">测试</button>
         <button open-type="getUserInfo" wx:if="{{!logged}}" bind:tap="login">授权登陆</button>
         <view class="userInfo-row" wx:else>
-            <open-data type="userAvatarUrl" lang="zh_CN" class="userInfo-img" src="{{userInfo.avatarUrl}}" alt="{{userInfo.nickName}}" />
+            <open-data type="userAvatarUrl" wx:if="{{logged}}" lang="zh_CN" class="userInfo-img" src="{{userInfo.avatarUrl}}" alt="{{userInfo.nickName}}" />
             <open-data type="userNickName" class="userInfo-nickname">
                 {{userInfo.nickName}}
             </open-data>

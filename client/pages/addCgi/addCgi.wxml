@@ -1,5 +1,5 @@
 <!-- index.wxml -->
 <view class="container">
     <!-- 请求按钮 -->
-    <calendar calendar-style="demo4-calendar" header-style="demo4-header" board-style="demo4-board" cell-size="50" days-color="{{demo1_days_style}}" weeks-type="cn" active-type="rounded" bindnextMonth="next" bindprevMonth="prev" binddateChange="dateChange" binddayClick="dayClick"></calendar>
+    <calendar calendar-style="calendar-style" header-style='header-style' headline-style="headline-style" remark_show="true" remark_style="userdefined" count_txt_user="{{infos}}" mystatus="{{mystatus}}" circle_show="{{true}}" isClick="true" />
 </view>

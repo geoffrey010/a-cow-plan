@@ -5,42 +5,17 @@ var util = require('../../utils/util.js')
 const MONTHS = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May.', 'June.', 'July.', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.']
 Page({
     data: {
-        year: new Date().getFullYear(),      // 年份
-        month: new Date().getMonth() + 1,    // 月份
-        day: new Date().getDate(),
-        str: MONTHS[new Date().getMonth()],  // 月份字符串
-
-        demo1_days_style: []
+        infos: [
+            { 'count_txt': 'what', 'count_ber': '内容1' },
+            { 'count_txt': '字段2：', 'count_ber': '内容2' },
+            { 'count_txt': '字段3：', 'count_ber': '内容3' },
+        ],
+        mystatus: []
     },
 
     onLoad() {
-        const days_count = new Date(this.data.year, this.data.month + 1, 0).getDate();
-        let demo1_days_style = new Array;
-        for (let i = 1; i <= days_count; i++) {
-            if (i == 3) {
-                demo1_days_style.push({
-                    month: 'current', day: i, color: 'white', background: '#46c4f3'
-                });
-            } else if (i == 7) {
-                demo1_days_style.push({
-                    month: 'current', day: i, color: 'white', background: '#ffb72b'
-                });
-            } else if (i == 12 || i == 23 || i == 24) {
-                demo1_days_style.push({
-                    month: 'current', day: i, color: 'white', background: '#865fc1'
-                });
-            } else if (i == 21 || i == 22) {
-                demo1_days_style.push({
-                    month: 'current', day: i, color: 'white', background: '#eb4986'
-                });
-            } else {
-                demo1_days_style.push({
-                    month: 'current', day: i, color: 'white'
-                });
-            }
-        }
         this.setData({
-            demo1_days_style
+            mystatus: [1, 2, 1, 1, 3, 1, 1, 2, 9, 9, 1, null, 1, 2, 1, 9, 9, null, 0, 1, 0, 3, 9, 9, 1, 1, 0, 0, 1, 9]
         })
     },
 

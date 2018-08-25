@@ -65,7 +65,7 @@ Component({
     },
 
     showRes(e) {
-      console.log('发生选日')
+      console.log(e)
     },
 
     hideView(e) {

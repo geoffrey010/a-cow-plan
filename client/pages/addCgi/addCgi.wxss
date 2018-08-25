@@ -1,20 +1,31 @@
-/**index.wxss**/
-page {
-    background: #F6F6F6;
+.calendar-style{
+  background: #3c9feb;  
+  color: #fff!important;
+}
+
+.header-style{
+    background: rgb(143, 111, 185);
+}
+
+.headline-style{
+    background: #439add;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    width: 100%;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
 }
-.demo4-calendar {
-    background-color: #413a60;
-    padding-top: 10px;
+.active-coloro{
+    background-color: rgb(235, 149, 69);
 }
-
-.demo4-header {
-    font-size: large;
-    color: white;
+.active-colort{
+    background-color: rgba(235, 149, 69, 0.404);
 }
-
-.demo4-board {
-    color: white;
+/* 出勤  */
+.dotcolor-o{
+    background-color: #188be4 !important;  
+}
+/* 未出勤  */
+.dotcolor-t{
+    background-color: #FF7F50 !important;  
 }

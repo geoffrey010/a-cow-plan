@@ -1,5 +1,5 @@
 //index.js
-const { Session, loginWithCode, login: qLogin, request } = require('../../vendor/wafer2-client-sdk/index')
+// const { Session, loginWithCode, login: qLogin, request } = require('../../vendor/wafer2-client-sdk/index')
 const config = require('../../config')
 const util = require('../../utils/util.js')
 const app = getApp()
@@ -16,7 +16,7 @@ Page({
         logged: null,
         takeSession: true,
         requestResult: '',
-        locationAuthType: app.data.locationAuthType
+        locationAuthType: 0
     },
 
     emptySelected() {
@@ -43,6 +43,13 @@ Page({
 
     // 用户登录示例
     login() {
+        if (app.globalData.userInfo) {
+            return this.setData({
+                userInfo: app.globalData.userInfo,
+                logged: true
+            })
+
+        }
         app.login({
             /**
              * @arg userInfo Object 用户信息
@@ -61,21 +68,6 @@ Page({
         })
     },
 
-    getScheduleMonthly() {
-        let month = this.data.year + '' + this.data.month
-        request({
-            url: config.service.scheduleMonthly + month,
-            success: ctx => {
-                let arr = ctx.data.data
-                for (let item in arr) {
-                    let str = arr[item].data
-
-                    console.log(JSON.parse(str))
-                }
-            }
-        })
-    },
-
     bindChange(e) {
         let [year, month, day] = e.detail.split('-')
         this.setData({
@@ -85,15 +77,6 @@ Page({
         })
     },
 
-    // checkUserIsLogin() {
-    //     let { logged, userInfo } = getApp().globalData
-    //     if (logged && userInfo) {
-    //         this.setData({
-    //             userInfo,
-    //             logged: true
-    //         })
-    //     }
-    // },
 
     onLoad() {
         // let { WindowHigh } = getApp().globalData.sysinf
@@ -101,15 +84,9 @@ Page({
 
     onShow() {
         // 同步授权状态
+        console.log(app.globalData)
         this.setData({
             locationAuthType: app.data.locationAuthType
-        })
-        app.checkSession({
-            success: ({ userInfo }) => {
-                this.setData({
-                    userInfo
-                })
-            }
         })
     }
 })
