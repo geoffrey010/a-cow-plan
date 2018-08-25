@@ -26,6 +26,7 @@ App({
             }
         })
     },
+
     getInfo({ sucess, error }) {
         wx.getUserInfo({
             success: res => {
@@ -47,6 +48,8 @@ App({
     login({ success, error }) {
         wx.getSetting({
             success: res => {
+                console.log(res)
+
                 if (res.authSetting['scope.userInfo'] === false) {
                     this.data.locationAuthType = UNAUTHORIZED
                     // 已拒绝授权

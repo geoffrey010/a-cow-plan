@@ -1,7 +1,7 @@
 //index.js
-// const { Session, loginWithCode, login: qLogin, request } = require('../../vendor/wafer2-client-sdk/index')
+const { Session, loginWithCode, login: qLogin, request } = require('../../vendor/wafer2-client-sdk/index')
 const config = require('../../config')
-const util = require('../../utils/util.js')
+// const util = require('../../utils/util.js')
 const app = getApp()
 
 Page({
@@ -55,12 +55,14 @@ Page({
              * @arg userInfo Object 用户信息
              */
             success: ({ userInfo }) => {
+                console.log('Index->login()->app.login()')
                 this.setData({
                     userInfo,
                     locationAuthType: app.data.locationAuthType
                 })
             },
             error: () => {
+                console.log('登陆出错咯')
                 this.setData({
                     locationAuthType: app.data.locationAuthType
                 })
